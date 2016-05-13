@@ -1,0 +1,61 @@
+---------------------------------------------------------------------------------
+Sean Levorse
+IGME 202 Section 5 (Tuesday/Thursday 11:00-12:15)
+---------------------------------------------------------------------------------
+ _______  _______ _________ _______  _______  _______ _________ ______   _______ 
+(  ___  )(  ____ \\__   __/(  ____ \(  ____ )(  ___  )\__   __/(  __  \ (  ____ \
+| (   ) || (    \/   ) (   | (    \/| (    )|| (   ) |   ) (   | (  \  )| (    \/
+| (___) || (_____    | |   | (__    | (____)|| |   | |   | |   | |   ) || (_____ 
+|  ___  |(_____  )   | |   |  __)   |     __)| |   | |   | |   | |   | |(_____  )
+| (   ) |      ) |   | |   | (      | (\ (   | |   | |   | |   | |   ) |      ) |
+| )   ( |/\____) |   | |   | (____/\| ) \ \__| (___) |___) (___| (__/  )/\____) |
+|/     \|\_______)   )_(   (_______/|/   \__/(_______)\_______/(______/ \_______)
+courtesy of http://patorjk.com/software/taag/#p=display&f=Epic&t=Asteroids
+
+---------------------------------------------------------------------------------
+
+User Functionality:
+-When you run the program, a menu screen appears with instructions on how to 
+	play the game
+-Hit enter to start the game
+-Controls:
+	-Up or W 	 | Accelerate forward
+	-Left or A	 | Rotate counterclockwise
+	-Right or D	 | Rotate clockwose
+	-Space		 | Fire a bullet
+-When the user dies, they are presented with a similar screen to the start
+	screen, but it also displays the user's score.
+-Hit enter to start another game
+
+Reason Behind Design Choices:
+-I included the start menu to give the user a chance to start the game on their
+	own terms. Also having a game over menu made it possible to start a new game
+	without having to restart the program
+-I made the ship an arrow shape because it was easy and is similar to the 
+	traditional ship in the original game
+-I made the asteroids using a random algorithm so that I could use hit circles
+	to make collisions easy and still look good
+-I gave the ship two controls for people who are used to either form of control
+-I implemented elastic collisions between the ship and the asteroids because my
+	roommate was complaining that the ship shouldn't be able to run over the
+	asteroids when it gets hurt by one
+-I made levels based on an algorithm so that I could spawn new asteroids when
+	the user killed them all, but I wouldn't get over croweded with a bunch of
+	asteroids
+
+Above and Beyond features:
+-The ship coasts after the up button is lifted like in the original game. I did
+	this by having a separate value for ship rotation and velocity. When I add
+	the acceleration in, I make a vector that has a magnitude that I gave it
+	and then rotate it by the angle I've stored.
+-When you load the game, there is a menu screen with controls. When you die,
+	there is a game over screen. This is done with almost a Finate State
+	Machine by having a program state variable that I change depending on cerain
+	stimuli in the code for each state.
+-The asteroids collide with the ship using elastic collisions and the asteroids
+	break appart to conserve kinetic energy. Having these physics systems in
+	place makes the game more realistic.
+
+Requirements not completed:
+-None that I'm aware of
+
